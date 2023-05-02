@@ -14,7 +14,7 @@ const MenuBar = () => {
                         <Link to="/" className="mx-3 text-decoration-none">Home</Link>
                         <Link to='/blog' className="mx-3 text-decoration-none">Blog</Link>
                     </Nav>
-                    <div><Image src='https://picsum.photos/200' roundedCircle height={25} /></div>
+                    <div data-toggle='tooltip' title='hhhhhh'><Image src='https://picsum.photos/200' roundedCircle height={25} /></div>
                     <Button variant="primary">Login</Button>
                 </Navbar.Collapse>
             </Navbar>
