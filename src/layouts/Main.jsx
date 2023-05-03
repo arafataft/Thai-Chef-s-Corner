@@ -3,6 +3,8 @@ import React from 'react';
 import MenuBar from '../pages/Shared/MenuBar/MenuBar';
 import Footer from '../pages/Shared/Footer/Footer';
 import { Outlet } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Main = () => {
     return (
@@ -10,6 +12,7 @@ const Main = () => {
             <MenuBar></MenuBar>
             <Outlet></Outlet>
             <Footer></Footer>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };

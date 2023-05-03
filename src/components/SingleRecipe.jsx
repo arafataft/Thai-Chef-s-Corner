@@ -2,9 +2,13 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import { Button, Card, Col } from 'react-bootstrap';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const SingleRecipe = ({recipe}) => {
     const {name, ingredients, method, rating }=recipe;
+
+    const notify = () => toast("The Recipe is your Favorite");
 
     return (
         
@@ -24,7 +28,7 @@ const SingleRecipe = ({recipe}) => {
                 </Card.Text>
               </Card.Body>
               <div className="mt-auto mb-1 text-center">
-                <Button variant="primary">Favorite</Button>
+                <Button onClick={notify} variant="primary">Favorite</Button>
               </div>
             </Card>
 
