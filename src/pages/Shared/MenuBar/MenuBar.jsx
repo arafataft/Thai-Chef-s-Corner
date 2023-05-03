@@ -7,7 +7,7 @@ const MenuBar = () => {
     return (
         <div>
             <Navbar className='container p-2' expand="sm">
-                <Navbar.Brand ><Link to="/" className="mx-3 text-black text-decoration-none">Thai Chef Recipe</Link></Navbar.Brand>
+                <Navbar.Brand ><Link to="/" className="mx-3 text-black text-decoration-none fw-bolder">Thai Chef Recipe Hunt</Link></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mx-auto">
