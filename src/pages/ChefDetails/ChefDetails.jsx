@@ -2,6 +2,7 @@
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 import SingleChef from '../../components/SingleChef';
+import Recipes from '../../components/Recipes';
 
 const ChefDetails = () => {
     const ChefDetailsInfo = useLoaderData();
@@ -15,6 +16,7 @@ const ChefDetails = () => {
     return (
         <div>
             <SingleChef Chef={Chef}></SingleChef>
+            <Recipes recipes={recipes}></Recipes>
         </div>
     );
 };

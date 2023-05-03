@@ -7,7 +7,7 @@ const SingleChef = ({Chef}) => {
     const {name, image, experience, numOfLike, description, numOfRecipe}=Chef;
 
     return (
-        <div className='container'>
+        <div className='container my-5'>
     <Card className="shadow border p-3">
       <Row>
         <Col md={6} className="d-flex justify-content-center align-items-center">
