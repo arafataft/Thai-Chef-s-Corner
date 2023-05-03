@@ -1,9 +1,19 @@
 /* eslint-disable react/jsx-key */
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Card, Col, Row } from 'react-bootstrap';
 
 const AllChef = () => {
+  const [chefInfo, setChefInfo]=useState([]);
+
+  useEffect(()=>{
+    fetch('http://localhost:3000/')
+    .then(res=>res.json())
+    .then(data=>setChefInfo(data))
+    .catch(error=>console.error(error))
+  },[])
+
+  
 
   return (
     // <div className='container'>
