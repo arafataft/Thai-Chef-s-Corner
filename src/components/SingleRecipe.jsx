@@ -2,13 +2,17 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import { Button, Card, Col } from 'react-bootstrap';
-import { ToastContainer, toast } from 'react-toastify';
+import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const SingleRecipe = ({recipe}) => {
     const {name, ingredients, method, rating }=recipe;
 
     const notify = () => toast("The Recipe is your Favorite");
+    const handleClick=(e)=>{
+      notify();
+      e.currentTarget.disabled = true;
+    };
 
     return (
         
@@ -28,7 +32,7 @@ const SingleRecipe = ({recipe}) => {
                 </Card.Text>
               </Card.Body>
               <div className="mt-auto mb-1 text-center">
-                <Button onClick={notify} variant="primary">Favorite</Button>
+                <Button onClick={handleClick} variant="primary">Favorite</Button>
               </div>
             </Card>
 
