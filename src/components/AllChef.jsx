@@ -8,7 +8,7 @@ const AllChef = () => {
   const [chefInfo, setChefInfo] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/')
+    fetch('https://b7a10-chef-recipe-hunter-server-side-arafataft-arafataft.vercel.app/')
       .then(res => res.json())
       .then(data => setChefInfo(data))
       .catch(error => console.error(error))

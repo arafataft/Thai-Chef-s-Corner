@@ -17,7 +17,7 @@ const router = createBrowserRouter([
             {
                 path:'/chefDetails/:id',
                 element:<ChefDetails></ChefDetails>,
-                loader:()=>fetch('http://localhost:3000/')
+                loader:()=>fetch('https://b7a10-chef-recipe-hunter-server-side-arafataft-arafataft.vercel.app/')
             }
         ]
     }
