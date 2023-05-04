@@ -26,7 +26,8 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 const createdUser = result.user;
-                setError('')
+                setError('');
+                form.reset();
             })
             .catch(error => {
                 setError(error.message);

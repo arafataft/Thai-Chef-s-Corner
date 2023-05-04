@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Main = () => {
     return (
-        <div>
+        <div style={{ backgroundImage: "url('https://img.freepik.com/free-photo/cardboard-texture_1194-5419.jpg?", height: '100vh', backgroundSize: 'cover', backgroundPosition: 'center' }}>
             <MenuBar></MenuBar>
             <Outlet></Outlet>
             <Footer></Footer>
