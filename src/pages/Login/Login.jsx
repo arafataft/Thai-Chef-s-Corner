@@ -4,7 +4,7 @@ import React, { useContext } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
-
+import { FaGoogle, FaGithub } from 'react-icons/fa';
 const Login = () => {
 
     const { signIn } = useContext(AuthContext);
@@ -57,6 +57,8 @@ const Login = () => {
 
                 </Form.Text>
             </Form>
+            <Button className='mb-2' variant="outline-primary"> <FaGoogle /> Login with Google</Button>
+            <Button variant="outline-secondary"> <FaGithub></FaGithub> Login with Github</Button>
         </Container>
     );
 };
