@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import Banner from '../../components/Banner';
-import AllChef from '../../components/AllChef';
+import AllChef from '../../components/AllChef/AllChef';
 import Gallery from '../../components/Gallery/Gallery';
 import Catering from '../../components/Catering';
 

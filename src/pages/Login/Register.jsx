@@ -7,6 +7,7 @@ import { AuthContext } from '../../Providers/AuthProvider';
 const Register = () => {
     const { createUser } = useContext(AuthContext);
     const [passError,serPassError]=useState(null);
+    const [Error,setError]=useState(null);
 
     const handleRegister = event => {
         event.preventDefault();
@@ -25,10 +26,10 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 const createdUser = result.user;
-                console.log(createdUser);
+                setError('')
             })
             .catch(error => {
-                console.log(error);
+                setError(error.message);
             })
     }
 
@@ -62,11 +63,8 @@ const Register = () => {
                 <Form.Text className="text-secondary">
                     Already Have an Account? <Link to="/login">Login</Link>
                 </Form.Text>
-                <Form.Text className="text-success">
-
-                </Form.Text>
                 <Form.Text className="text-danger">
-                    {passError&&<span>{passError}</span>}
+                    {setError&&<p>{Error}</p>}
                 </Form.Text>
             </Form>
         </Container>

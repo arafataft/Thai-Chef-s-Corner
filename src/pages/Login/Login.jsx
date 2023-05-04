@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
@@ -12,6 +12,8 @@ const Login = () => {
     const auth=getAuth(app);
     const provider=new GoogleAuthProvider();
     const provider1=new GithubAuthProvider();
+    const [Error,setError]=useState(null);
+
 
     const handleGoogleLogin=()=>{
         signInWithPopup(auth,provider)
@@ -42,10 +44,12 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 const loggedUser = result.user;
-                navigate(from)
+                navigate(from);
+                setError('')
             })
             .catch(error => {
                 console.log(error);
+                setError(error.message)
             })
     }
 
@@ -70,11 +74,9 @@ const Login = () => {
                 <Form.Text className="text-secondary">
                     Don't Have an Account? <Link to="/register">Register</Link>
                 </Form.Text>
-                <Form.Text className="text-success">
 
-                </Form.Text>
                 <Form.Text className="text-danger">
-
+                {setError&&<p>{Error}</p>}
                 </Form.Text>
             </Form>
             <Button onClick={handleGoogleLogin} className='mb-2' variant="outline-primary"> <FaGoogle /> Login with Google</Button>
