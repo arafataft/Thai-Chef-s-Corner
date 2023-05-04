@@ -14,7 +14,7 @@ const ErrorPage = () => {
         
         <div className=' text-center'>
           <h2 >
-            <span>Error</span> {status || 404}
+            <span></span> {status || 404}
           </h2>
           <p >
             {error?.message}
