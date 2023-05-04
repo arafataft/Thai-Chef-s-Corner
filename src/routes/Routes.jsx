@@ -6,7 +6,7 @@ import ErrorPage from "../components/ErrorPage";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Login/Register";
 import PrivateRoute from "./PrivateRoute";
-import Blog from "../components/Blog";
+import Blog from "../pages/Blog/Blog";
 
 const router = createBrowserRouter([
     {
