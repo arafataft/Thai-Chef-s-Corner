@@ -26,7 +26,7 @@ const MenuBar = () => {
                         <Link to='/blog' className="mx-3 text-decoration-none">Blog</Link>
                     </Nav>
                     {user?<div className='d-flex'>
-                        <div  data-toggle='tooltip' title={user.sing}><Image src='https://picsum.photos/200' roundedCircle height={25} /></div>
+                        <div  data-toggle='tooltip' title={user.displayName}><Image src='https://picsum.photos/200' roundedCircle height={25} /></div>
                         <Button onClick={handleLogout} variant="primary" className='ms-1'>Logout</Button>
                     </div>:
                     <Link to='/login'><Button variant="primary">Login</Button></Link>}

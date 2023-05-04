@@ -1,8 +1,11 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import { PDFDownloadLink,Document, Page } from '@react-pdf/renderer';
+import React, { useState } from 'react';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+// import { Document, Page } from 'react-pdf';
 
 const Blog = () => {
+  
   const blogPosts = [
     {
       id: 1,
@@ -26,12 +29,29 @@ const Blog = () => {
     },
   ];
 
+  const [pdfContent, setPdfContent] = useState(null);
+
+  const generatePdf = () => {
+    const content = (
+      <Document>
+        {blogPosts.map((post) => (
+          <Page key={post.id}>
+            <h2>{post.title}</h2>
+            <p>{post.answer}</p>
+          </Page>
+        ))}
+      </Document>
+    );
+    setPdfContent(content);
+  };
+
+
   return (
     <div className="blog-section">
       <Container>
       <div className="d-flex justify-content-between align-items-center mb-3">
           <h2 className="section-title">Q&A Blog </h2>
-          <Button variant="primary">View All</Button>
+          <Button variant="primary" onClick={generatePdf}>Download PDF</Button>
         </div>
         <Row>
           {blogPosts.map((post) => (
@@ -46,6 +66,17 @@ const Blog = () => {
             </Col>
           ))}
         </Row>
+        {pdfContent && (
+          <div style={{ display: 'none' }}>
+            <PDFDownloadLink   document={pdfContent} fileName="blog.pdf">
+              {({ blob, url, loading, error }) =>
+                loading ? 'Loading document...' : 'Download now!'
+              }
+            </PDFDownloadLink>
+          </div>
+        )}
+
+
       </Container>
     </div>
   );

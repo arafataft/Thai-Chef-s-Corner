@@ -1,11 +1,12 @@
 /* eslint-disable no-unused-vars */
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
 
 const Register = () => {
     const { createUser } = useContext(AuthContext);
+    const [passError,serPassError]=useState(null);
 
     const handleRegister = event => {
         event.preventDefault();
@@ -14,6 +15,11 @@ const Register = () => {
         const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
+        if(password.length<6){
+            serPassError('Password should be 6 character')
+        }else{
+            serPassError('')
+        }
 
         console.log(name, photo, email, password)
         createUser(email, password)
@@ -60,7 +66,7 @@ const Register = () => {
 
                 </Form.Text>
                 <Form.Text className="text-danger">
-
+                    {passError&&<span>{passError}</span>}
                 </Form.Text>
             </Form>
         </Container>
