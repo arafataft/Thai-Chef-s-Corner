@@ -1,8 +1,9 @@
 /* eslint-disable no-unused-vars */
-import { PDFDownloadLink,Document, Page } from '@react-pdf/renderer';
-import React, { useState } from 'react';
+import jsPDF from 'jspdf';
+import 'jspdf-autotable';
+import React from 'react';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
-// import { Document, Page } from 'react-pdf';
+
 
 const Blog = () => {
   
@@ -29,20 +30,16 @@ const Blog = () => {
     },
   ];
 
-  const [pdfContent, setPdfContent] = useState(null);
 
-  const generatePdf = () => {
-    const content = (
-      <Document>
-        {blogPosts.map((post) => (
-          <Page key={post.id}>
-            <h2>{post.title}</h2>
-            <p>{post.answer}</p>
-          </Page>
-        ))}
-      </Document>
-    );
-    setPdfContent(content);
+  const handleDownloadPDF = () => {
+    const doc = new jsPDF();
+
+    doc.text('Q&A Blog', 15, 10);
+
+    const data = blogPosts.map((post) => [post.id, post.title, post.answer]);
+    doc.autoTable({ head: [['ID', 'Title', 'Answer']], body: data });
+
+    doc.save('blog_posts.pdf');
   };
 
 
@@ -51,7 +48,7 @@ const Blog = () => {
       <Container>
       <div className="d-flex justify-content-between align-items-center mb-3">
           <h2 className="section-title">Q&A Blog </h2>
-          <Button variant="primary" onClick={generatePdf}>Download PDF</Button>
+          <Button variant="primary" onClick={handleDownloadPDF}>Download PDF</Button>
         </div>
         <Row>
           {blogPosts.map((post) => (
@@ -66,15 +63,7 @@ const Blog = () => {
             </Col>
           ))}
         </Row>
-        {pdfContent && (
-          <div style={{ display: 'none' }}>
-            <PDFDownloadLink   document={pdfContent} fileName="blog.pdf">
-              {({ blob, url, loading, error }) =>
-                loading ? 'Loading document...' : 'Download now!'
-              }
-            </PDFDownloadLink>
-          </div>
-        )}
+        
 
 
       </Container>
