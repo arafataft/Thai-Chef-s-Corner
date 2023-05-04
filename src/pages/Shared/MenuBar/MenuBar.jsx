@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
 import React, { useContext } from 'react';
 import { Button, Image, Nav, Navbar } from 'react-bootstrap';
@@ -19,7 +20,7 @@ const MenuBar = () => {
       <Navbar className='container p-2' expand='sm'>
         <Navbar.Brand>
           <Link to='/' className='mx-3 text-black text-decoration-none fw-bolder'>
-            Thai Chef Recipe
+          Thai Chef's Corner
           </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
