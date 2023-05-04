@@ -7,23 +7,43 @@ const Gallery = () => {
   const images = [
     {
       id: 1,
-      src: 'https://source.unsplash.com/random/800x600',
-      alt: 'Image 1',
+      src: 'https://source.unsplash.com/random/800x600/?Food',
+      alt: 'Thai Food',
     },
     {
       id: 2,
-      src: 'https://source.unsplash.com/random/800x601',
-      alt: 'Image 2',
+      src: 'https://source.unsplash.com/random/800x601/?Food',
+      alt: 'Thai Food',
     },
     {
       id: 3,
-      src: 'https://source.unsplash.com/random/800x602',
-      alt: 'Image 3',
+      src: 'https://source.unsplash.com/random/800x602/?food',
+      alt: 'Thai Food',
     },
     {
       id: 4,
-      src: 'https://source.unsplash.com/random/800x603',
-      alt: 'Image 4',
+      src: 'https://source.unsplash.com/random/800x603/?food',
+      alt: 'Thai Food',
+    },
+    {
+      id: 5,
+      src: 'https://source.unsplash.com/random/800x604/?food',
+      alt: 'Thai Food',
+    },
+    {
+      id: 6,
+      src: 'https://source.unsplash.com/random/800x605/?food',
+      alt: 'Thai Food',
+    },
+    {
+      id: 7,
+      src: 'https://source.unsplash.com/random/800x606/?food',
+      alt: 'Thai Food',
+    },
+    {
+      id: 8,
+      src: 'https://source.unsplash.com/random/800x607/?food',
+      alt: 'Thai Food',
     },
   ];
 

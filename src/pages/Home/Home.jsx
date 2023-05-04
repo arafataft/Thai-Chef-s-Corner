@@ -3,6 +3,7 @@ import React from 'react';
 import Banner from '../../components/Banner';
 import AllChef from '../../components/AllChef';
 import Gallery from '../../components/Gallery/Gallery';
+import Catering from '../../components/Catering';
 
 const Home = () => {
     return (
@@ -10,6 +11,7 @@ const Home = () => {
             <Banner></Banner>
             <AllChef></AllChef>
             <Gallery></Gallery>
+            <Catering></Catering>
         </div>
     );
 };
