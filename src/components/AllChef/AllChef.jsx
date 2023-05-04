@@ -1,25 +1,32 @@
 /* eslint-disable react/no-unescaped-entities */
-/* eslint-disable react/jsx-key */
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
-import { Button, Card, Col, Row } from 'react-bootstrap';
+import { Button, Card, Col, Row, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import LazyLoad from 'react-lazy-load';
 import './AllChef.css';
 
 const AllChef = () => {
   const [chefInfo, setChefInfo] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch('https://b7a10-chef-recipe-hunter-server-side-arafataft-arafataft.vercel.app/')
       .then(res => res.json())
-      .then(data => setChefInfo(data))
+      .then(data => {
+        setChefInfo(data);
+        setLoading(false);
+      })
       .catch(error => console.error(error))
   }, [])
 
+  if (loading) {
+    return <Spinner animation="border" role="status" className="d-block mx-auto my-5">
+             <span className="sr-only"></span>
+           </Spinner>;
+  }
 
   return (
-
     <div className='container my-5'>
       <h1 className='text-center'>The Chef's</h1>
       <Row className='py-4'>
@@ -45,14 +52,10 @@ const AllChef = () => {
                 <Link to={`/chefDetails/${chef.id}`}><Button variant="primary">View Recipes</Button></Link>
               </div>
             </Card>
-
           </Col>
         )}
-
       </Row>
-
     </div>
-
   );
 };
 

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import { Button, Carousel, Image } from 'react-bootstrap';
@@ -6,18 +7,11 @@ const Banner = () => {
     return (
         <div>
             <Carousel>
-                <Carousel.Item>
-                    {/* https://img.freepik.com/premium-photo/white-felt-texture-background_469558-4790.jpg?w=740 */}
-                    <div style={{ backgroundImage: "url('https://source.unsplash.com/random/800x600/?Food')", height: '90vh', backgroundSize: 'cover', backgroundPosition: 'center' }}>
-                        <div className="container">
-                            <div className="d-flex align-items-center">
-                                
-                                <div className=" ">
-                                    <div>
-                                    <h1 className="mb-3">Welcome To Thai Chef</h1>
-                                    <p className="mb-4 text-secondary">Explore thousands of job opportunities with all the information you need. Its your future. Come find it. Manage all your job application from start to finish.</p>
-                                    </div>
-                                </div>
+            <Carousel.Item>
+                    <div style={{ backgroundImage: "url('https://img.freepik.com/free-photo/front-view-delicious-pancakes-with-fruits-berries-dark-surface-fruit-cake-dessert_140725-81894.jpg?')", height: '90vh', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
+                            <div className="text-center">
+                                <h1 className="mb-3 text-light">Welcome To  Thai <span style={{color:' #00e68a'}} className=''> Chef's Corner</span></h1>
                             </div>
                         </div>
                     </div>
@@ -28,13 +22,13 @@ const Banner = () => {
                             <div className="row">
                                 <div className="col-md-6 d-flex align-items-center">
                                     <div>
-                                    <h1 className="mb-3">Welcome To Thai Chef </h1>
-                                    <p className="mb-4 text-secondary">Explore thousands of job opportunities with all the information you need. Its your future. Come find it. Manage all your job application from start to finish.</p>
-                                    <Button variant="primary">Contact Us</Button>
+                                        <h1 className="mb-3">Welcome To Thai Chef's Corner </h1>
+                                        <p className="mb-4 text-secondary">A platform where you can find the best thai recipes and top chefs for your catering needs.</p>
+                                        <Button variant="primary">Contact Us</Button>
                                     </div>
                                 </div>
                                 <div className="col-md-6">
-                                    <Image className='mt-2' src="chef1.jpg" alt="Slide 1" height={500} />
+                                    <Image className='mt-2' src="https://source.unsplash.com/random/800x600/?Chef" alt="Slide 1" height={500} width={500} rounded />
                                 </div>
                             </div>
                         </div>
