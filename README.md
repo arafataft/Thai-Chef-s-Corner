@@ -19,5 +19,5 @@ Welcome to the Thai Chef's Corner, a platform where you can find the best thai r
 
 ## Live Site
 
-- [@arafataft](https://www.github.com/arafataft)
+- [Thai Chef's Corner](https://thai-chef-recipe.web.app/)
 
