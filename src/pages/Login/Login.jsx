@@ -10,7 +10,6 @@ const Login = () => {
     const { signIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
-    console.log('login page location', location)
     const from = location.state?.from?.pathname || '/'
 
     const handleLogin = event => { 
@@ -23,7 +22,7 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 const loggedUser = result.user;
-                navigate(from, { replace: true })
+                navigate(from)
             })
             .catch(error => {
                 console.log(error);
