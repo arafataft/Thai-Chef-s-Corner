@@ -5,6 +5,7 @@ import ChefDetails from "../pages/ChefDetails/ChefDetails";
 import ErrorPage from "../components/ErrorPage";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Login/Register";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -18,7 +19,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'/chefDetails/:id',
-                element:<ChefDetails></ChefDetails>,
+                element:<PrivateRoute><ChefDetails/></PrivateRoute>,
                 loader:()=>fetch('https://b7a10-chef-recipe-hunter-server-side-arafataft-arafataft.vercel.app/')
             },
             {

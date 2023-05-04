@@ -6,7 +6,13 @@ import { AuthContext } from '../../../Providers/AuthProvider';
 
 const MenuBar = () => {
 
-    const {user}=useContext(AuthContext);
+    const {user,logOut}=useContext(AuthContext);
+
+    const handleLogout=()=>{
+        logOut()
+        .then()
+        .catch(error=>console.error(error))
+    }
 
 
     return (
@@ -19,7 +25,10 @@ const MenuBar = () => {
                         <Link to='/' className="mx-3 text-decoration-none">Home</Link>
                         <Link to='/blog' className="mx-3 text-decoration-none">Blog</Link>
                     </Nav>
-                    {user?<div data-toggle='tooltip' title={user.sing}><Image src='https://picsum.photos/200' roundedCircle height={25} /></div>:
+                    {user?<div className='d-flex'>
+                        <div  data-toggle='tooltip' title={user.sing}><Image src='https://picsum.photos/200' roundedCircle height={25} /></div>
+                        <Button onClick={handleLogout} variant="primary" className='ms-1'>Logout</Button>
+                    </div>:
                     <Link to='/login'><Button variant="primary">Login</Button></Link>}
                 </Navbar.Collapse>
             </Navbar>
