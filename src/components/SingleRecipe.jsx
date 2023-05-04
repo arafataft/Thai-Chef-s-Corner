@@ -32,7 +32,7 @@ const SingleRecipe = ({recipe}) => {
                 </Card.Text>
               </Card.Body>
               <div className="mt-auto mb-1 text-center">
-                <Button onClick={handleClick} variant="primary">Favorite</Button>
+                <Button onClick={handleClick} variant="secondary">Favorite</Button>
               </div>
             </Card>
 

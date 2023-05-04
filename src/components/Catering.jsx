@@ -12,7 +12,7 @@ const Catering = () => {
             <p className="mb-4">
               We offer professional catering services for all kinds of events, big or small. From weddings to corporate events, we can provide delicious and authentic Thai cuisine to impress your guests.
             </p>
-            <Button variant="primary">Learn More</Button>
+            <Button variant="secondary">Learn More</Button>
           </Col>
           <Col md={6}>
             <img src="https://source.unsplash.com/random/800x600/?catering" alt="Catering" className="img-fluid" />

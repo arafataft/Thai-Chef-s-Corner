@@ -49,7 +49,7 @@ const AllChef = () => {
                 </Card.Text>
               </Card.Body>
               <div className="mt-auto mb-1 text-center">
-                <Link to={`/chefDetails/${chef.id}`}><Button variant="primary">View Recipes</Button></Link>
+                <Link to={`/chefDetails/${chef.id}`}><Button variant="secondary">View Recipes</Button></Link>
               </div>
             </Card>
           </Col>

@@ -43,13 +43,13 @@ const MenuBar = () => {
               <div data-toggle='tooltip' title={user.displayName}>
                 <Image src='https://picsum.photos/200' roundedCircle height={25} />
               </div>
-              <Button onClick={handleLogout} variant='primary' className='ms-1'>
+              <Button onClick={handleLogout} variant='secondary' className='ms-1'>
                 Logout
               </Button>
             </div>
           ) : (
             <Link to='/login'>
-              <Button variant='primary'>Login</Button>
+              <Button variant='secondary'>Login</Button>
             </Link>
           )}
         </Navbar.Collapse>

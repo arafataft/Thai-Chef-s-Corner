@@ -8,12 +8,12 @@ function Footer() {
       <Container>
         <Row>
           <Col md={4}>
-            <h5>About Chef Hunter</h5>
-            <p>Chef Hunter is a website dedicated to helping foodies discover new restaurants and chefs in their area.</p>
+            <h5>About Thai Chef Corner</h5>
+            <p> ThaiChef Corner is a website dedicated to helping foodies discover new restaurants and chefs in their area.</p>
           </Col>
           <Col md={4}>
             <h5>Contact Us</h5>
-            <p>Email: info@chefhunter.com<br />Phone: 555-555-5555</p>
+            <p>Email: info@thaichef.com<br />Phone: 012345678910</p>
           </Col>
           <Col md={4}>
             <h5>Join Our Newsletter</h5>
@@ -28,7 +28,7 @@ function Footer() {
         </Row>
         <Row className="mt-4">
           <Col>
-            <p className="text-center">&copy; 2023 Chef Hunter. All rights reserved.</p>
+            <p className="text-center">&copy; 2023 Thai Chef Corner. All rights reserved.</p>
           </Col>
         </Row>
       </Container>

@@ -24,7 +24,7 @@ const Banner = () => {
                                     <div>
                                         <h1 className="mb-3">Welcome To Thai Chef's Corner </h1>
                                         <p className="mb-4 text-secondary">A platform where you can find the best thai recipes and top chefs for your catering needs.</p>
-                                        <Button variant="primary">Contact Us</Button>
+                                        <Button variant="secondary">Contact Us</Button>
                                     </div>
                                 </div>
                                 <div className="col-md-6">
