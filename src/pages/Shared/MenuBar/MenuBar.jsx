@@ -41,7 +41,7 @@ const MenuBar = () => {
           {user ? (
             <div className='d-flex'>
               <div data-toggle='tooltip' title={user.displayName}>
-                <Image src='https://picsum.photos/200' roundedCircle height={25} />
+                <Image src={user.photoURL ||'https://picsum.photos/200'} roundedCircle height={25} />
               </div>
               <Button onClick={handleLogout} variant='secondary' className='ms-1'>
                 Logout
