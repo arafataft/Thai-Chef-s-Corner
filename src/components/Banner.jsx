@@ -27,9 +27,9 @@ const Banner = () => {
                                         <Button variant="secondary">Contact Us</Button>
                                     </div>
                                 </div>
-                                <div className="col-md-6 p-2">
-                                    <Image className='d-none d-md-block' src="https://source.unsplash.com/random/800x600/?Chef" alt="Slide 1" height={500} width={460} rounded />
-                                    <Image className='d-md-none img-fluid' src="https://source.unsplash.com/random/800x600/?Chef" alt="Slide 1" height={500} width={460} rounded />
+                                <div className="col-md-6 p-1">
+                                    <Image className='d-none d-md-block' src="https://source.unsplash.com/random/800x600/?Chef" alt="Slide 1" height={500} width={490} rounded />
+                                    <Image className='d-md-none img-fluid' src="https://source.unsplash.com/random/800x600/?Chef" alt="Slide 1" height={500} width={490} rounded />
                                 </div>
                             </div>
                         </div>
