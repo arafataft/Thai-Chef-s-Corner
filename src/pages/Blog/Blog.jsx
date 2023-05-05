@@ -37,7 +37,7 @@ const Blog = () => {
     doc.text('Q&A Blog', 15, 10);
 
     const data = blogPosts.map((post) => [post.id, post.title, post.answer]);
-    doc.autoTable({ head: [['ID', 'Title', 'Answer']], body: data });
+    doc.autoTable({ head: [['ID', 'Question', 'Answer']], body: data });
 
     doc.save('blog_posts.pdf');
   };
