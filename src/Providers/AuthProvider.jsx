@@ -13,16 +13,16 @@ const AuthProvider = ({children}) => {
     const [user,setUser] =useState(null);
     const [loading, setLoading] = useState(true);
 
+    // Function to create new user with email, password, name, and photo
     const createUser = async (email, password,name,photo) => {
         setLoading(true);
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
         const user = userCredential.user;
-        console.log(user)
         await updateProfile(user, {
             displayName: name,
             photoURL:photo
           });
-        await signOut(auth);
+        await signOut(auth); // Signing out the user after successful registration
           
     }
 

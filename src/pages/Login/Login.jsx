@@ -15,6 +15,7 @@ const Login = () => {
     const [Error,setError]=useState(null);
 
 
+    // Handle login with Google
     const handleGoogleLogin=()=>{
         signInWithPopup(auth,provider)
         .then((result)=>{
@@ -22,6 +23,7 @@ const Login = () => {
         })
         .catch(error=>console.error(error.message))
     }
+    // Handle login with GitHub
     const handleGitHubLogin=()=>{
         signInWithPopup(auth,provider1)
         .then((result)=>{
@@ -29,17 +31,18 @@ const Login = () => {
         })
         .catch(error=>console.error(error.message))
     }
+    // hooks
     const { signIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/'
 
+    // Handle login
     const handleLogin = event => { 
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
 
         signIn(email, password)
             .then(result => {
@@ -48,8 +51,13 @@ const Login = () => {
                 setError('')
             })
             .catch(error => {
-                console.log(error);
-                setError(error.message)
+                if (error.code === "auth/user-not-found") {
+                    setError("User not found");
+                } else if (error.code === "auth/wrong-password") {
+                    setError("Invalid password");
+                } else {
+                    setError(error.message);
+                }
             })
     }
 
