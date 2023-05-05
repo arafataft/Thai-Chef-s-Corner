@@ -1,38 +1,41 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
 
 const Register = () => {
     const { createUser } = useContext(AuthContext);
-    const [passError,serPassError]=useState(null);
+    const [reset,setReset]=useState();
     const [Error,setError]=useState(null);
+    const Navigate=useNavigate();
+
+    
 
     const handleRegister = event => {
+        
         event.preventDefault();
         const form = event.target;
         const name = form.name.value;
         const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
-        if(password.length<6){
-            serPassError('Password should be 6 character')
-        }else{
-            serPassError('')
-        }
 
-        console.log(name, photo, email, password)
-        createUser(email, password)
-            .then(result => {
-                const createdUser = result.user;
+        createUser(email, password,name,photo)
+            .then(() => {
                 setError('');
-                form.reset();
+                alert('Registration successful! Please Login');
+                Navigate('/login');
             })
             .catch(error => {
                 setError(error.message);
+                console.log(error);
             })
+            setReset(form.reset());
     }
+
+    const reform=()=>reset;
+    
 
     return (
         <Container className='w-25 mx-auto'>
@@ -53,11 +56,11 @@ const Register = () => {
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Photo URL</Form.Label>
-                    <Form.Control type="text" name='photo' placeholder="Photo URL" required />
+                    <Form.Control type="text" name='photo' placeholder="Photo URL" />
                 </Form.Group>
 
                     
-                <Button variant="primary" type="submit">
+                <Button onClick={reform} variant="primary" type="submit">
                     Register
                 </Button>
                 <br />
