@@ -7,11 +7,11 @@ const Banner = () => {
     return (
         <div>
             <Carousel>
-            <Carousel.Item>
+                <Carousel.Item>
                     <div style={{ backgroundImage: "url('https://img.freepik.com/free-photo/front-view-delicious-pancakes-with-fruits-berries-dark-surface-fruit-cake-dessert_140725-81894.jpg?')", height: '90vh', backgroundSize: 'cover', backgroundPosition: 'center' }}>
                         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
                             <div className="text-center">
-                                <h1 className="mb-3 text-light">Welcome To  Thai <span style={{color:' #00e68a'}} className=''> Chef's Corner</span></h1>
+                                <h1 className="mb-3 text-light">Welcome To  Thai <span style={{ color: ' #00e68a' }} className=''> Chef's Corner</span></h1>
                             </div>
                         </div>
                     </div>
@@ -27,8 +27,9 @@ const Banner = () => {
                                         <Button variant="secondary">Contact Us</Button>
                                     </div>
                                 </div>
-                                <div className="col-md-6">
-                                    <Image className='mt-2' src="https://source.unsplash.com/random/800x600/?Chef" alt="Slide 1" height={500} width={500} rounded />
+                                <div className="col-md-6 p-2">
+                                    <Image className='d-none d-md-block' src="https://source.unsplash.com/random/800x600/?Chef" alt="Slide 1" height={500} width={460} rounded />
+                                    <Image className='d-md-none img-fluid' src="https://source.unsplash.com/random/800x600/?Chef" alt="Slide 1" height={500} width={460} rounded />
                                 </div>
                             </div>
                         </div>

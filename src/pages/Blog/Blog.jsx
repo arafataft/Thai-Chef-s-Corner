@@ -7,6 +7,7 @@ import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 
 const Blog = () => {
   
+  //question ,answer data
   const blogPosts = [
     {
       id: 1,
@@ -31,8 +32,9 @@ const Blog = () => {
   ];
 
 
+  //handle pdf download
   const handleDownloadPDF = () => {
-    const doc = new jsPDF();
+    const doc = new jsPDF(); //make pdf
 
     doc.text('Q&A Blog', 15, 10);
 

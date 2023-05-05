@@ -11,7 +11,9 @@ const Main = () => {
         <div style={{ backgroundImage: "url('https://img.freepik.com/free-photo/cardboard-texture_1194-5419.jpg?", height: '100vh', backgroundSize: 'cover', backgroundPosition: 'center' }}>
             <MenuBar></MenuBar>
             <Outlet></Outlet>
-            <Footer></Footer>
+            <div style={{ position: 'relative' }}>
+              <Footer style={{ position: 'absolute', bottom: 0 }}></Footer>
+            </div>
             <ToastContainer></ToastContainer>
         </div>
     );

@@ -8,6 +8,7 @@ const ChefDetails = () => {
     const ChefDetailsInfo = useLoaderData();
     let {id} = useParams();
 
+    //find that chef which params id
     const Chef=ChefDetailsInfo.find(info=>info.id==id);
 
 

@@ -10,6 +10,8 @@ const AllChef = () => {
   const [chefInfo, setChefInfo] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  //fetch all chef data
+  //sometime its delay to fetch when vercel server down
   useEffect(() => {
     fetch('https://b7a10-chef-recipe-hunter-server-side-arafataft-arafataft.vercel.app/')
       .then(res => res.json())
@@ -20,6 +22,7 @@ const AllChef = () => {
       .catch(error => console.error(error))
   }, [])
 
+  //loading until data fetch from server
   if (loading) {
     return <Spinner animation="border" role="status" className="d-block mx-auto my-5">
              <span className="sr-only"></span>

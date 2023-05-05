@@ -7,8 +7,9 @@ import { AuthContext } from '../../../Providers/AuthProvider';
 
 const MenuBar = () => {
   const { user, logOut } = useContext(AuthContext);
-  const location = useLocation();
+  const location = useLocation(); //location for is Active
 
+  //handle logout
   const handleLogout = () => {
     logOut()
       .then()

@@ -8,6 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const SingleRecipe = ({recipe}) => {
     const {name, ingredients, method, rating }=recipe;
 
+    //show toast when favorite button clicked
     const notify = () => toast("The Recipe is your Favorite");
     const handleClick=(e)=>{
       notify();

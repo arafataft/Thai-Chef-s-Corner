@@ -9,27 +9,29 @@ import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from
 import app from '../../firebase/firebase.config';
 
 const Login = () => {
-    const auth=getAuth(app);
-    const provider=new GoogleAuthProvider();
-    const provider1=new GithubAuthProvider();
-    const [Error,setError]=useState(null);
+    const auth = getAuth(app);
+    const provider = new GoogleAuthProvider();
+    const provider1 = new GithubAuthProvider();
+    const [Error, setError] = useState(null);
 
 
     // Handle login with Google
-    const handleGoogleLogin=()=>{
-        signInWithPopup(auth,provider)
-        .then((result)=>{
-            result.user;
-        })
-        .catch(error=>console.error(error.message))
+    const handleGoogleLogin = () => {
+        signInWithPopup(auth, provider)
+            .then(() => {
+                navigate(from);
+                setError(null);
+            })
+            .catch(error => console.error(error.message))
     }
     // Handle login with GitHub
-    const handleGitHubLogin=()=>{
-        signInWithPopup(auth,provider1)
-        .then((result)=>{
-            result.user;
-        })
-        .catch(error=>console.error(error.message))
+    const handleGitHubLogin = () => {
+        signInWithPopup(auth, provider1)
+            .then(() => {
+                navigate(from);
+                setError(null);
+            })
+            .catch(error => console.error(error.message))
     }
     // hooks
     const { signIn } = useContext(AuthContext);
@@ -38,7 +40,7 @@ const Login = () => {
     const from = location.state?.from?.pathname || '/'
 
     // Handle login
-    const handleLogin = event => { 
+    const handleLogin = event => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
@@ -84,7 +86,7 @@ const Login = () => {
                 </Form.Text>
 
                 <Form.Text className="text-danger">
-                {setError&&<p>{Error}</p>}
+                    {setError && <p>{Error}</p>}
                 </Form.Text>
             </Form>
             <Button onClick={handleGoogleLogin} className='mb-2' variant="outline-primary"> <FaGoogle /> Login with Google</Button>
