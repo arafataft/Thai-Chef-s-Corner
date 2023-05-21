@@ -12,7 +12,6 @@ Welcome to the Thai Chef's Corner, a platform where you can find the best thai r
 - Blog page with Q&A section to provide helpful tips and answers to common questions
 
 
-
 ## Authors
 
 - [@arafataft](https://www.github.com/arafataft)
