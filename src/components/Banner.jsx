@@ -8,7 +8,7 @@ const Banner = () => {
         <div>
             <Carousel>
                 <Carousel.Item>
-                    <div style={{ backgroundImage: "url('https://img.freepik.com/free-photo/front-view-delicious-pancakes-with-fruits-berries-dark-surface-fruit-cake-dessert_140725-81894.jpg?')", height: '90vh', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+                    <div style={{ backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://img.freepik.com/free-photo/front-view-delicious-pancakes-with-fruits-berries-dark-surface-fruit-cake-dessert_140725-81894.jpg?')", height: '90vh', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
                         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
                             <div className="text-center">
                                 <h1 className="mb-3 text-light">Welcome To  Thai <span style={{ color: ' #00e68a' }} className=''> Chef's Corner</span></h1>
