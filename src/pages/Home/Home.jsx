@@ -16,7 +16,9 @@ const Home = () => {
     }, []);
     return (
         <div>
+            <div data-aos="fade-up">
             <Banner></Banner>
+            </div>
             <AllChef></AllChef>
             <Gallery></Gallery>
             <Catering></Catering>
