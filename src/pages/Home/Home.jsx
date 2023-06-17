@@ -19,7 +19,10 @@ const Home = () => {
             <div data-aos="fade-up">
             <Banner></Banner>
             </div>
+            <div data-aos="fade-up">
             <AllChef></AllChef>
+            </div>
+            
             <Gallery></Gallery>
             <Catering></Catering>
         </div>
