@@ -5,6 +5,7 @@ import AllChef from '../../components/AllChef/AllChef';
 import Gallery from '../../components/Gallery/Gallery';
 import Catering from '../../components/Catering';
 import Aos from 'aos';
+import About from '../../components/About/About';
 
 const Home = () => {
     useEffect(() => {
@@ -26,8 +27,9 @@ const Home = () => {
             <Gallery></Gallery>
             </div>
             
-            
+            <About/>
             <Catering></Catering>
+
         </div>
     );
 };
