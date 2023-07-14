@@ -6,6 +6,7 @@ import Gallery from '../../components/Gallery/Gallery';
 import Catering from '../../components/Catering';
 import Aos from 'aos';
 import About from '../../components/About/About';
+import EventAndSpecials from '../../components/EventAndSpecials/EventAndSpecials';
 
 const Home = () => {
     useEffect(() => {
@@ -26,7 +27,7 @@ const Home = () => {
             <div data-aos="fade-up">
             <Gallery></Gallery>
             </div>
-            
+            <EventAndSpecials/>
             <About/>
             <Catering></Catering>
 
