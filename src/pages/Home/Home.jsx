@@ -27,7 +27,10 @@ const Home = () => {
             <div data-aos="fade-up">
             <Gallery></Gallery>
             </div>
+            <div data-aos="fade-up">
             <EventAndSpecials/>
+            </div>
+            
             <About/>
             <Catering></Catering>
 
